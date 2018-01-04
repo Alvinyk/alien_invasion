@@ -1,0 +1,4 @@
+*.whl
+*.pyc
+*.project
+.pydevproject

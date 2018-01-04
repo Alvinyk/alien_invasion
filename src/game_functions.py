@@ -97,22 +97,22 @@ def check_bullet_alien_collision(ai_settings,screen,ship,aliens,bullets,stats,sb
    
     
 def get_number_rows(ai_settings,ship_height,alien_height):
-    available_space_y = (ai_settings.screen_height - (3*alien_height) - ship_height)
-    number_rows = int(available_space_y / (2*alien_height))
+    available_space_y = (ai_settings.screen_height - (5*alien_height) - ship_height)
+    number_rows = int(available_space_y / (1.5*alien_height))
     return number_rows
 
 
 def get_number_aliens(ai_settings,alien_width):
     available_space_x = ai_settings.screen_width - 2*alien_width
-    number_aliens_x = int(available_space_x / (2*alien_width))
+    number_aliens_x = int(available_space_x / (1.5*alien_width))
     return number_aliens_x
 
 def create_alien(ai_settings,screen,aliens,alien_number,row_number):
     alien = Alien(ai_settings,screen)
     alien_width = alien.rect.width
-    alien.x = alien_width + 2*alien_width*alien_number
+    alien.x = alien_width + 1.5*alien_width*alien_number
     alien.rect.x = alien.x
-    alien.rect.y = alien.rect.height + 2*alien.rect.height * row_number
+    alien.rect.y = alien.rect.height + 1.5*alien.rect.height * row_number
     aliens.add(alien)
     
 def create_fleet(ai_settings,screen,ship,aliens):
